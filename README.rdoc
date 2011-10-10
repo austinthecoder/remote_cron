@@ -4,28 +4,33 @@ Headless app for scheduling remote requests using clockwork.
 
 == Running on Heroku
 
-=== Clone the app
+==== Clone the app
 
     git clone git@github.com:soccer022483/remote_cron.git
 
-=== Make sure you have the heroku gem installed
+==== Make sure you have the heroku gem installed
 
     gem install heroku
 
-=== Create the app
+==== Create the app
 
     heroku apps:create -s cedar
 
-=== Deploy
+==== Deploy
 
     git push heroku master
 
-=== Migrate
+==== Migrate
 
     heroku run rake db:migrate
 
-=== Create a task on the heroku console:
-This will schedule a task to hit http://example.com every 10 seconds
+==== Create a task on the heroku console
+This will schedule a task to hit example.com every 10 seconds.
 
     heroku run console
     Task.create! :title => 'example', :url => 'http://example.com', :seconds => 10, :http_method => 'GET'
+
+==== Make sure the right processes are running
+The clock is the only process. This app doesn't have a web UI.
+
+    heroku scale web=0 clock=1
