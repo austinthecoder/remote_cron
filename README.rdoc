@@ -1,9 +1,10 @@
-== Remote Cron
+= Remote Cron
 
 Headless app for scheduling remote requests using clockwork.
 
-= Running on Heroku
+== Running on Heroku
 
-Grab the app from github:
-`git clone git@github.com:soccer022483/remote_cron.git`
+Clone the app:
+
+    git clone git@github.com:soccer022483/remote_cron.git`
 
